@@ -33,7 +33,7 @@ class App extends Component {
     }, 1000);
   }
   componentWillUnmount() {
-    window.clearInterval(intId);
+    window.clearInterval(this.intId);
   }
   render() {
     return (
