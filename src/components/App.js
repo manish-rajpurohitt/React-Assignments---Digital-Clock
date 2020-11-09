@@ -17,7 +17,7 @@ class App extends Component {
       hours = hours ? hours : 12; // the hour '0' should be '12'
       minutes = minutes < 10 ? "0" + minutes : minutes;
       seconds = seconds < 10 ? "0" + seconds : seconds;
-      let strTime = hours + ":" + minutes + ":" + seconds + ampm;
+      let strTime = hours + ":" + minutes + ":" + seconds +" "+ ampm;
       console.log(strTime);
       this.setState({ time: strTime });
     }, 1000);
@@ -27,8 +27,10 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="Clock">
-        <h3 id="time">{this.state.time}</h3>
+      <div className="App">
+        <div className="Clock">
+          <h3 id="time">{`${this.state.time}`}</h3>
+        </div>
       </div>
     );
   }
