@@ -17,6 +17,7 @@ class App extends Component {
     this.state = { time: strTime };
   }
   componentDidMount() {
+    console.log("didMount");
     let intId = setInterval(() => {
       let date = new Date();
       let hours = date.getHours();
@@ -32,8 +33,11 @@ class App extends Component {
       this.setState({ time: strTime });
     }, 1000);
   }
-  componentDidUpdate() {
-    window.clearInterval(this.intId);
+
+  
+  componentWillUnmount() {
+    
+    clearInterval(this.intId);
   }
   render() {
     return (
