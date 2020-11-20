@@ -28,11 +28,11 @@ class App extends Component {
       minutes = minutes < 10 ? "0" + minutes : minutes;
       seconds = seconds < 10 ? "0" + seconds : seconds;
       let strTime = hours + ":" + minutes + ":" + seconds +" "+ ampm;
-      console.log(strTime);
+      
       this.setState({ time: strTime });
     }, 1000);
   }
-  componentWillUnmount() {
+  componentDidUpdate() {
     window.clearInterval(this.intId);
   }
   render() {
