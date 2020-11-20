@@ -18,7 +18,7 @@ class App extends Component {
   }
   componentDidMount() {
     console.log("didMount");
-    let intId = setInterval(() => {
+    this.intId = setInterval(() => {
       let date = new Date();
       let hours = date.getHours();
       let minutes = date.getMinutes();
